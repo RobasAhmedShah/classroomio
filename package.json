@@ -14,9 +14,6 @@
   },
   "license": "MIT",
   "packageManager": "pnpm@8.0.0",
-  "dependencies": {
-    "turbo": "^1.10.16"
-  },
   "devDependencies": {
     "concurrently": "^8.2.2",
     "eslint": "^8.54.0",
@@ -26,6 +23,7 @@
     "standard-version": "^9.5.0",
     "supabase": "^1.151.1",
     "tsconfig": "workspace:*",
+    "turbo": "^1.13.4",
     "typescript": "^5.1.6"
   },
   "engines": {
