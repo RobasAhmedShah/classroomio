@@ -55,7 +55,7 @@ export const currentOrgDomain = derived(currentOrg, ($currentOrg) => {
 });
 
 export const isFreePlan = derived(currentOrg, ($currentOrg) => {
-  if (!$currentOrg.id || env.IS_SELFHOSTED === 'true') return false;
+  if (!$currentOrg.id || env.IS_SELFHOSTED === 'true') return true;
 
   const plan = getActivePlan($currentOrg);
 
