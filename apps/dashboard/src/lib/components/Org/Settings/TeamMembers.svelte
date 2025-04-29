@@ -18,7 +18,6 @@
     triggerSendEmail,
     NOTIFICATION_NAME
   } from '$lib/utils/services/notification/notification';
-  import { isFreePlan } from '$lib/utils/store/org';
   import type { OrgTeamMember } from '$lib/utils/types/org';
   import { t } from '$lib/utils/functions/translations';
 
@@ -150,7 +149,6 @@
           placeholder={$t('course.navItem.people.teams.placeholder')}
           bind:value={emailsStr}
           className="mb-3"
-          isDisabled={$isFreePlan}
           {errorMessage}
         />
 
@@ -158,7 +156,6 @@
           labelText={$t('course.navItem.people.teams.role')}
           bind:selected={role}
           class="mb-5 w-40"
-          disabled={$isFreePlan}
         >
           <SelectItem value={ROLE.ADMIN} text={$t(ROLE_LABEL[ROLE.ADMIN])} />
           <SelectItem value={ROLE.TUTOR} text={$t(ROLE_LABEL[ROLE.TUTOR])} />
@@ -168,7 +165,7 @@
           label={$t('course.navItem.people.teams.send_invite')}
           onClick={onSendInvite}
           {isLoading}
-          isDisabled={isLoading || $isFreePlan}
+          isDisabled={isLoading }
         />
       </div>
     </Column>
