@@ -59,7 +59,7 @@ export const isFreePlan = derived(currentOrg, ($currentOrg) => {
 
   const plan = getActivePlan($currentOrg);
 
-  return !plan || plan.plan_name === PLAN.BASIC;
+  return !plan || plan.plan_name === PLAN.ENTERPRISE;
 });
 
 export const currentOrgMaxAudience = derived(currentOrgPlan, ($plan) =>
