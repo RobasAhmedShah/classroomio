@@ -99,7 +99,6 @@
       <RadioButtonGroup
         bind:selected={$course.certificate_theme}
         class="mb-10"
-        disabled={$isFreePlan}
       >
         <div class="flex flex-wrap justify-between gap-y-5">
           {#each themes as theme}
@@ -141,7 +140,7 @@
             placeholder={$t('course.navItem.certificates.placeholder')}
             bind:value={$course.description}
             errorMessage={errors.description}
-            disabled={$isFreePlan}
+         
             helperMessage={helperText}
           />
         </span>
@@ -150,7 +149,7 @@
           bind:toggled={$course.is_certificate_downloadable}
           class="my-4"
           size="sm"
-          disabled={$isFreePlan}
+      
         >
           <span slot="labelA" style={$globalStore.isDark ? 'color: white' : 'color: #161616'}
             >{$t('generic.locked')}</span
@@ -185,7 +184,7 @@
       variant={VARIANTS.CONTAINED_DARK}
       onClick={saveCertificate}
       isLoading={isSaving}
-      isDisabled={$isFreePlan}
+    
     >
       {#if $isFreePlan}
         <FlashFilled size={16} class="text-blue-700" />
