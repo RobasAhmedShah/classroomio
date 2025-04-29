@@ -93,7 +93,7 @@
     isConfirming = (query.get('confirmation') || '') === 'true';
   }
 
-  $: handleUpgradeSuccess(true);
+  $: handleUpgradeSuccess(Boolean($currentOrg.id && !$isFreePlan && open));
   function handleUpgradeSuccess(upgradeSuccessful: boolean) {
     if (upgradeSuccessful) {
       onUpgrade();
