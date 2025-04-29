@@ -54,7 +54,7 @@
 </script>
 
 <svelte:head>
-  <title>Customer Education | ClassroomIO</title>
+  <title>Customer Education | LearnovaAi</title>
 </svelte:head>
 
 <section class="flex flex-col justify-center items-center">
