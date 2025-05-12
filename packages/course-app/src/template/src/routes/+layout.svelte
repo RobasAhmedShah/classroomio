@@ -11,16 +11,16 @@
 
   import '../app.css';
 
-  interface Props {
-    children: import('svelte').Snippet;
+  type Props = {
     data: {
       page: Page;
       sharedPage: Page;
       courses: Course[];
     };
-  }
+  };
 
-  let { data, children }: Props = $props();
+  export let data: Props['data'];
+  export let children: import('svelte').Snippet;
 
   const seo: Section | undefined = $derived(getPageSection(data.sharedPage, 'seo'));
 
