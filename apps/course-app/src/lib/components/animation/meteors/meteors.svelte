@@ -29,6 +29,7 @@
 		style="top: {style.top}px; left: {style.left}; animation-delay: {style.animationDelay}; animation-duration: {style.animationDuration};"
 	>
 		<!-- Meteor Tail  -->
+		<!-- svelte-ignore element_invalid_self_closing_tag -->
 		<div
 			class="pointer-events-none absolute top-1/2 -z-10 h-px w-[50px] -translate-y-1/2 bg-gradient-to-r from-slate-500 via-blue-600/30 to-transparent"
 		/>
