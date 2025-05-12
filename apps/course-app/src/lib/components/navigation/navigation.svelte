@@ -1,10 +1,11 @@
+
 <script lang="ts">
   import { page } from '$app/stores';
   import ArrowUpRight from 'lucide-svelte/icons/arrow-up-right';
 
   const getClass = (active: boolean) => (active ? 'text-foreground' : 'text-foreground/60');
 
-  let activeClass = $derived({
+  let activeClass = ($derived as any)({
     template: getClass($page.url.href.includes('#templates')),
     features: getClass($page.url.href.includes('#features'))
   });

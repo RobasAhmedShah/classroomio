@@ -4,7 +4,6 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo prepare --concurrency 13 && turbo run dev",
-    "lint": "turbo run lint",
     "clean": "turbo clean && rm -rf node_modules",
     "format": "prettier . --write",
     "release": "standard-version",
@@ -15,16 +14,18 @@
   "license": "MIT",
   "packageManager": "pnpm@8.0.0",
   "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "5.0.3",
     "concurrently": "^8.2.2",
-    "eslint": "^8.54.0",
-    "prettier": "^3.1.0",
-    "prettier-plugin-svelte": "^3.1.2",
-    "prettier-plugin-tailwindcss": "^0.5.7",
+    "eslint": "^8.57.1",
+    "eslint-plugin-svelte": "2.36.0-next.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "standard-version": "^9.5.0",
-    "supabase": "^1.151.1",
+    "supabase": "^1.226.4",
     "tsconfig": "workspace:*",
     "turbo": "^1.13.4",
-    "typescript": "^5.1.6"
+    "typescript": "^5.8.3"
   },
   "engines": {
     "node": "^18.17.0"

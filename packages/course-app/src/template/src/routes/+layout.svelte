@@ -1,13 +1,13 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
-  import { homePage, sharedPage } from '$lib/utils/stores/pages';
-  import { courses } from '$lib/utils/stores/course';
-  import { getPageSection } from '$lib/utils/helpers/page';
   import { components } from '$lib/components';
   import Transition from '$lib/components/ui/_custom/Transition.svelte';
-  import type { Page, Section } from '$lib/utils/types/page';
+  import { getPageSection } from '$lib/utils/helpers/page';
+  import { courses } from '$lib/utils/stores/course';
+  import { homePage, sharedPage } from '$lib/utils/stores/pages';
   import type { Course } from '$lib/utils/types/course';
+  import type { Page, Section } from '$lib/utils/types/page';
 
   import '../app.css';
 
@@ -19,8 +19,7 @@
     };
   };
 
-  export let data: Props['data'];
-  export let children: import('svelte').Snippet;
+  let { data, children }: Props = $props();
 
   const seo: Section | undefined = $derived(getPageSection(data.sharedPage, 'seo'));
 
@@ -32,8 +31,12 @@
 </script>
 
 <svelte:head>
-  <title>{seo?.settings.title}</title>
-  <meta name="description" content={seo?.settings.description} />
+  {#if seo?.settings?.title}
+    <title>{seo.settings.title}</title>
+  {/if}
+  {#if seo?.settings?.description}
+    <meta name="description" content={seo.settings.description} />
+  {/if}
 </svelte:head>
 
 {#if $homePage.id}
@@ -43,11 +46,15 @@
         <components.navigation />
       {/if}
 
-      {@render children?.()}
+      <slot />
 
       {#if !$page.url.pathname.includes('course/')}
         <components.footer />
       {/if}
     </Transition>
   </main>
+{:else}
+  <div class="loading">
+    Loading...
+  </div>
 {/if}
