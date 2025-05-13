@@ -83,7 +83,7 @@ export const load = async ({ url, cookies, request }): Promise<LoadOutput> => {
     console.log('custom domain response.org', response.org);
 
     if (!response.org) {
-      throw redirect(307, 'https://app.classroomio.com/404?type=org');
+      throw redirect(307, 'https://peopletalk.io/404?type=org');
     }
 
     response.isOrgSite = true;
@@ -104,7 +104,7 @@ export const load = async ({ url, cookies, request }): Promise<LoadOutput> => {
     response.org = (await getCurrentOrg(response.orgSiteName, true)) || null;
 
     if (!response.org && !isDev) {
-      throw redirect(307, 'https://app.classroomio.com/404?type=org');
+      throw redirect(307, 'https://peopletalk.io/404?type=org');
     } else if (!response.org && _orgSiteName) {
       cookies.delete('_orgSiteName');
     }
@@ -112,7 +112,7 @@ export const load = async ({ url, cookies, request }): Promise<LoadOutput> => {
     response.skipAuth = true;
   } else if (!APP_SUBDOMAINS.includes(subdomain) && !isDev) {
     // This case is for anything in our blockedSubdomains
-    throw redirect(307, 'https://app.classroomio.com');
+    throw redirect(307, 'https://peopletalk.io');
   }
 
   return response;

@@ -29,7 +29,7 @@
       {/if}
     </ul>
     <a
-      href="https://classroomio.com"
+      href="https://peopletalk.io"
       target="_blank"
       rel="noopener noreferrer"
       class="flex items-center gap-1"

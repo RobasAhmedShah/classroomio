@@ -9,7 +9,7 @@
       return goto('/');
     }
 
-    return goto('https://classroomio.com');
+    return goto('https://peopletalk.io');
   }
 </script>
 

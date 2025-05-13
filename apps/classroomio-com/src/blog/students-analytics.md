@@ -56,4 +56,4 @@ Further more, when you go into any course and go to the people tab, you can view
 
 We are working on adding more analytics to the platform to help you better understand what's going on in your organisation. You will know the coutries of your students, their overall performance and more.
 
-Give us feedback on what you think about this feature and what you would like to see next on [Discord](https://classroomio.com/discord).
+Give us feedback on what you think about this feature and what you would like to see next on [Discord](https://peopletalk.io/discord).

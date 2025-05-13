@@ -31,7 +31,7 @@
       {/if}
     </ul>
     <a
-      href="https://classroomio.com"
+      href="https://peopletalk.io"
       class="flex items-center gap-1 text-blue-700 hover:underline dark:text-white"
       target="_blank"
       rel="noopener noreferrer"

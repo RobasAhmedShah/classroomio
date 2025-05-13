@@ -134,12 +134,12 @@
           <li
             class="lg:text-base text-sm leading-6 tracking-wide text-gray-600 hover:text-gray-900"
           >
-            <a target="_blank" href="https://classroomio.com/docs/"> Help center </a>
+            <a target="_blank" href="https://peopletalk.io/docs/"> Help center </a>
           </li>
           <li
             class="lg:text-base text-sm leading-6 tracking-wide text-gray-600 hover:text-gray-900"
           >
-            <a target="_blank" href="https://classroomio.com/docs/quickstart/signup">
+            <a target="_blank" href="https://peopletalk.io/docs/quickstart/signup">
               Getting Started
             </a>
           </li>
@@ -179,7 +179,7 @@
           <li
             class="lg:text-base text-sm leading-6 tracking-wide text-gray-600 hover:text-gray-900"
           >
-            <a target="_blank" href="https://classroomio.com/docs/quickstart/signup">
+            <a target="_blank" href="https://peopletalk.io/docs/quickstart/signup">
               Getting Started
             </a>
           </li>

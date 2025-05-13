@@ -195,7 +195,7 @@
     </div>
     <a
       class="font-medium text-sm after:content-['→'] after:ml-2 hover:opacity-80 transition-opacity duration-200"
-      href="https://app.classroomio.com"
+      href="https://peopletalk.io"
     >
       Dashboard
     </a>
@@ -330,7 +330,7 @@
         </a>
         <a
           class="font-semibold after:content-['→'] rounded-md after:ml-2 w-full text-left py-4 px-4 hover:bg-gray-100 text-sm md:text-lg transition-all duration-200"
-          href="https://app.classroomio.com"
+          href="https://peopletalk.io"
         >
           Dashboard
         </a>

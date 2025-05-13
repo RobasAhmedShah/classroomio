@@ -27,7 +27,7 @@ Today I am happy to announce that we've added support for custom domains into ou
 
 ## Who has access to custom domains?
 
-Custom domains are only available within our [Early Adopters plan](https://classroomio.com/pricing). This is our only paid plan for now except our enterprise plans. If you need a demo of the product or contemplating on whether this plan is right for you, please [schedule a demo with us](https://classroomio.com/demo).
+Custom domains are only available within our [Early Adopters plan](https://peopletalk.io/pricing). This is our only paid plan for now except our enterprise plans. If you need a demo of the product or contemplating on whether this plan is right for you, please [schedule a demo with us](https://peopletalk.io/demo).
 
 ## Demo
 

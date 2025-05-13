@@ -24,7 +24,7 @@ export async function POST({ request }) {
         Interested? just book a 30mn demo slot in our calendar!
       </p>
       <div>
-        <a href="https://classroomio.com/demo">Book demo</a>
+        <a href="https://peopletalk.io/demo">Book demo</a>
       </div>
       <p>
         PS: I reply personally to every email. We don't have an outsourced support team at the other end of the globe.. ;-)

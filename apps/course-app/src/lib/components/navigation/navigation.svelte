@@ -17,7 +17,7 @@
   <p class="bg-blue-700 py-1.5 text-center text-sm font-medium text-white">
     brought to you by
     <a
-      href="https://classroomio.com"
+      href="https://peopletalk.io"
       target="_blank"
       class="inline-flex items-center font-semibold underline-offset-2 hover:underline"
       >classroomio.com

@@ -95,7 +95,7 @@
   <div class="border-b py-3 space-y-4">
     <p class="text-xs font-semibold text-gray-500">{$t('profileMenu.free_tools')}</p>
     <a
-      href="https://classroomio.com/tools/progress"
+      href="https://peopletalk.io/tools/progress"
       target="_blank"
       class="flex items-center gap-2"
       on:click={closeMenu}
@@ -104,7 +104,7 @@
       <p class="text-sm font-semibold">{$t('profileMenu.progress')}</p>
     </a>
     <a
-      href="https://classroomio.com/tools/activity-stopwatch"
+      href="https://peopletalk.io/tools/activity-stopwatch"
       target="_blank"
       class=" flex items-center gap-2"
       on:click={closeMenu}
@@ -113,7 +113,7 @@
       <p class="text-sm font-semibold">{$t('profileMenu.timer')}</p>
     </a>
     <a
-      href="https://classroomio.com/tools/tic-tac-toe"
+      href="https://peopletalk.io/tools/tic-tac-toe"
       target="_blank"
       class=" flex items-center gap-2"
       on:click={closeMenu}
@@ -122,7 +122,7 @@
       <p class="text-sm font-semibold">{$t('profileMenu.tic_tac')}</p>
     </a>
     <a
-      href="https://classroomio.com/tools"
+      href="https://peopletalk.io/tools"
       on:click={closeMenu}
       target="_blank"
       class="flex ml-auto w-fit items-center justify-end"
@@ -136,7 +136,7 @@
   {#if !$globalStore.isOrgSite}
     <div class="border-b py-3 space-y-4">
       <a
-        href="https://classroomio.com/roadmap"
+        href="https://peopletalk.io/roadmap"
         target="_blank"
         on:click={closeMenu}
         class="hover:no-underline flex items-center gap-2"
@@ -145,7 +145,7 @@
         <p class="text-sm font-semibold">{$t('profileMenu.whats_new')}</p>
       </a>
       <a
-        href="https://classroomio.com/blog/launch-week"
+        href="https://peopletalk.io/blog/launch-week"
         target="_blank"
         on:click={closeMenu}
         class="hover:no-underline flex items-center gap-2"

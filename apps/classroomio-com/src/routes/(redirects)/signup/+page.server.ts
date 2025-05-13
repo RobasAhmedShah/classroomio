@@ -1,5 +1,5 @@
-import { redirect } from '@sveltejs/kit';
 import { client } from '$lib/utils/posthog';
+import { redirect } from '@sveltejs/kit';
 
 export const load = ({ request }) => {
   client.capture({
@@ -7,5 +7,5 @@ export const load = ({ request }) => {
     event: 'signup'
   });
 
-  redirect(307, 'https://app.classroomio.com/signup');
+  redirect(307, 'https://peopletalk.io/signup');
 };

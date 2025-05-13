@@ -5,7 +5,7 @@
   import Locked from 'carbon-icons-svelte/lib/Locked.svelte';
 
   function handleClick() {
-    return goto('https://classroomio.com');
+    return goto('https://peopletalk.io');
   }
 </script>
 

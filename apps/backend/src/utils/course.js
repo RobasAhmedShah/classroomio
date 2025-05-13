@@ -80,12 +80,10 @@ function getLessonBody(
   const showExtraResources = slideUrl || (video && video.length > 0);
   return `
   <div
-  class="bg-[${
-    orgTheme ? orgTheme : '#0030FF'
-  }] w-full h-40 flex flex-col items-center justify-center gap-2 rounded-lg m-0">
+  class="bg-[${orgTheme ? orgTheme : '#0030FF'
+    }] w-full h-40 flex flex-col items-center justify-center gap-2 rounded-lg m-0">
   <h3
-    class="my-0 rounded-full w-10 text-center mx-auto py-1 text-[${
-      orgTheme ? orgTheme : '#0030FF'
+    class="my-0 rounded-full w-10 text-center mx-auto py-1 text-[${orgTheme ? orgTheme : '#0030FF'
     }] bg-white text-md font-bold tracking-tighter">
     ${lessonNumber}
   </h3>
@@ -99,42 +97,38 @@ function getLessonBody(
   </section>
 
   <section>
-  ${
-    showExtraResources
+  ${showExtraResources
       ? `
       <section>
         <h1 class='text-xl font-bold my-1'>Extra Resources</h1>
-        ${
-          slideUrl
-            ? `<div class="flex mt-2 mb-1">
+        ${slideUrl
+        ? `<div class="flex mt-2 mb-1">
                   <p class="m-0 mr-2">Slide Link:</p> <a href=${slideUrl} style="color: blue" class="underline">Open Here</a>
               </div>`
-            : ''
-        }
-        ${
-          video && video.length > 0
-            ? `
+        : ''
+      }
+        ${video && video.length > 0
+        ? `
               <p class="m-0">Video Link:</p>
               <div class="m-0">
                 <ol class="m-0">
                   ${video
-                    .map(
-                      (videoData, index) => `
-                      <li key=${
-                        index + 1
-                      }><a href=${videoData} style="color: blue" class="underline">${videoData}</a></li> 
+          .map(
+            (videoData, index) => `
+                      <li key=${index + 1
+              }><a href=${videoData} style="color: blue" class="underline">${videoData}</a></li> 
                   `
-                    )
-                    .join('')}
+          )
+          .join('')}
                 </ol>
               </div>
               `
-            : ''
-        }
+        : ''
+      }
       </section>
     `
       : ''
-  }
+    }
   </section>
 </main>
   `;
@@ -142,8 +136,7 @@ function getLessonBody(
 
 function getCourseBody({ courseTitle, orgName, orgTheme, lessons }) {
   return `
-    <header class="flex justify-center items-center flex-col border-[${
-      orgTheme ? orgTheme : '#0030FF'
+    <header class="flex justify-center items-center flex-col border-[${orgTheme ? orgTheme : '#0030FF'
     }] border-[40px] mx-3 h-[100vh] m-0">
       <h1 class="font-bold text-8xl text-black m-0 mx-96">${courseTitle}</h1>
       <h4 class="text-md text-2xl font-light text-black mt-5 ">${orgName}</h4>
@@ -178,7 +171,7 @@ async function generateSinglePdfFromHtml(htmlContent, courseTitle, orgTheme) {
   //   footerTemplate: `
   //       <div class="footer" style="position: relative; display: flex; text-align: right; margin-right: 5%; font-size: 8px; width: 297mm; padding-top: 30px;">
   //         <div style="position: absolute; right: 50%; bottom: 3%;"><span class="pageNumber"></span>/<span class="totalPages"></span></div>
-  //         <div style="position: absolute; right: 0; bottom: 3%;">${courseTitle} | Powered by <a href="https://app.classroomio.com" style="text-decoration: underline;">ClassroomIO</a></div>
+  //         <div style="position: absolute; right: 0; bottom: 3%;">${courseTitle} | Powered by <a href="https://peopletalk.io" style="text-decoration: underline;">ClassroomIO</a></div>
   //       </div>
   //     `,
   //   margin: {

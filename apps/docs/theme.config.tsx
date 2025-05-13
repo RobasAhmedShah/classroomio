@@ -1,4 +1,3 @@
-import React from 'react';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
@@ -10,7 +9,7 @@ const config: DocsThemeConfig = {
         content="A flexible, user-friendly platform for creating, managing, and delivering courses for companies and training organisations"
       />
 
-      <meta property="og:url" content="https://classroomio.com/docs" />
+      <meta property="og:url" content="https://peopletalk.io/docs" />
       <meta property="og:type" content="website" />
       <meta
         property="og:title"
@@ -31,7 +30,7 @@ const config: DocsThemeConfig = {
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="classroomio.com" />
-      <meta property="twitter:url" content="https://classroomio.com/docs" />
+      <meta property="twitter:url" content="https://peopletalk.io/docs" />
       <meta
         name="twitter:title"
         content="ClassroomIO | The Open Source Learning Management System for Companies"
@@ -65,7 +64,7 @@ const config: DocsThemeConfig = {
           borderRadius: 5,
           padding: '2px 7px'
         }}
-        href="https://app.classroomio.com"
+        href="https://peopletalk.io"
       >
         Dashboard ↗
       </a>

@@ -1,10 +1,10 @@
-<a href="https://classroomio.com/">
+<a href="https://peopletalk.io/">
   <img alt="ClassroomIO is a no-code tool that allows you build and scale your online bootcamp with ease." src="https://raw.githubusercontent.com/rotimi-best/classroomio/main/apps/classroomio-com/static/classroomio-opengraph-image.png" />
   <h1 align="center">ClassroomIO.com</h1>
   <p align="center">
     The Open Source Learning Management System for Companies
     <br />
-    <a href="https://classroomio.com">Website</a>  |  <a href="https://dub.sh/ciodiscord">Join Discord community</a>
+    <a href="https://peopletalk.io">Website</a>  |  <a href="https://dub.sh/ciodiscord">Join Discord community</a>
   </p>
 </a>
 
@@ -71,10 +71,10 @@ Here is what you need to be able to run ClassroomIO.com
 
 This repo is a mono repo that consists of 3 projects:
 
-1. `classroomio-com`: The landing page of ClassroomIO hosted [here](https://classroomio.com)
+1. `classroomio-com`: The landing page of ClassroomIO hosted [here](https://peopletalk.io)
 2. `backend`: The backend service that handles PDF, video processing, Emailing and Notifications.
-3. `dashboard`: The web application that runs the learning management system hosted [here](https://app.classroomio.com).
-4. `docs`: Official documentation of ClassroomIO hosted [here](https://classroomio.com/docs)
+3. `dashboard`: The web application that runs the learning management system hosted [here](https://peopletalk.io).
+4. `docs`: Official documentation of ClassroomIO hosted [here](https://peopletalk.io/docs)
 
 ## Development
 
@@ -190,4 +190,4 @@ To get the environmental variables for supabase continue to step(5)
     - Enter email: `admin@test.com`
     - Enter password: `123456`
      
-    To learn more about how to login with a dummy account, [go here.](https://classroomio.com/docs/contributor-guides/demo-accounts)
+    To learn more about how to login with a dummy account, [go here.](https://peopletalk.io/docs/contributor-guides/demo-accounts)

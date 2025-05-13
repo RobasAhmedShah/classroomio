@@ -7,7 +7,7 @@
 
 {#if $isFreePlan}
   <a
-    href={`https://classroomio.com?utm_source=${$currentOrg.siteName}.classroomio.com`}
+    href={`https://peopletalk.io?utm_source=${$currentOrg.siteName}.classroomio.com`}
     target="_blank"
     class="group fixed bottom-14 right-9 z-50 hover:no-underline"
   >

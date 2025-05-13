@@ -96,42 +96,38 @@ function getLessonBody({ title, number, orgName, note, slideUrl, video, courseTi
         </section>
 
         <section>
-        ${
-          showExtraResources
-            ? `
+        ${showExtraResources
+      ? `
             <section>
               <h1 class='text-xl font-bold my-1'>Extra Resources</h1>
-              ${
-                slideUrl
-                  ? `<div class="flex mt-2 mb-1">
+              ${slideUrl
+        ? `<div class="flex mt-2 mb-1">
                         <p class="m-0 mr-2">Slide Link:</p> <a href=${slideUrl} style="color: blue" class="underline">Open Here</a>
                     </div>`
-                  : ''
-              }
-              ${
-                video && video.length > 0
-                  ? `
+        : ''
+      }
+              ${video && video.length > 0
+        ? `
                     <p class="m-0">Video Link:</p>
                     <div class="m-0">
                       <ol class="m-0">
                         ${video
-                          .map(
-                            (videoData, index) => `
-                            <li key=${
-                              index + 1
-                            }><a href=${videoData} style="color: blue" class="underline">${videoData}</a></li> 
+          .map(
+            (videoData, index) => `
+                            <li key=${index + 1
+              }><a href=${videoData} style="color: blue" class="underline">${videoData}</a></li> 
                         `
-                          )
-                          .join('')}
+          )
+          .join('')}
                       </ol>
                     </div>
                     `
-                  : ''
-              }
+        : ''
+      }
             </section>
           `
-            : ''
-        }
+      : ''
+    }
         </section>
       </main>
 
@@ -160,7 +156,7 @@ async function generateSinglePdfFromHtml(htmlContent, courseTitle) {
   //   headerTemplate:
   //     "<div><div class='pageNumber'></div> <div>/</div><div class='totalPages'></div></div>",
   //   footerTemplate: `<div class="footer" style="text-align: right; margin-right: 5%; font-size: 8px; width: 297mm; padding-top: 30px;">
-  //     ${courseTitle} | Powered by <a href="https://app.classroomio.com" style="color: blue; text-decoration: underline;">ClassroomIO</a>
+  //     ${courseTitle} | Powered by <a href="https://peopletalk.io" style="color: blue; text-decoration: underline;">ClassroomIO</a>
   //     </div>`,
   //   margin: {
   //     top: '0.4cm',
