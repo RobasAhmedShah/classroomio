@@ -14,6 +14,17 @@
   let fileSize = 0;
   let uploadedFiles: { name: string; url: string }[] = [];
 
+  // Load existing slides on mount
+  onMount(async () => {
+    if ($lesson.materials.slide_url) {
+      const existingUrls = $lesson.materials.slide_url.split(',').map(url => url.trim());
+      uploadedFiles = existingUrls.map(url => ({
+        name: url.split('/').pop() || '',
+        url: url
+      }));
+    }
+  });
+
   async function onFileSelected(e: Event) {
     const files = (e.target as HTMLInputElement).files;
     if (!files?.length) return;
@@ -49,7 +60,18 @@
         if (data) {
           const { data: response } = await supabase.storage.from('uploads').getPublicUrl(filename);
           uploadedFiles = [...uploadedFiles, { name: file.name, url: response.publicUrl }];
+          
+          // Update the lesson materials with all slide URLs
           $lesson.materials.slide_url = uploadedFiles.map(f => f.url).join(',');
+          
+          // Update the lesson in the database
+          const { error: updateError } = await supabase
+            .from('lessons')
+            .update({ materials: $lesson.materials })
+            .eq('id', lessonId);
+
+          if (updateError) throw updateError;
+          
           snackbar.success('course.navItem.lessons.materials.tabs.slide.upload_success');
         }
       } catch (error) {
