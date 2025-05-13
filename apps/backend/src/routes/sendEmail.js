@@ -20,7 +20,7 @@ async function sendWithNodemailer(emailData) {
   }
 
   return await transporter.sendMail({
-    from: from || '"Best from ClassroomIO" <notify@classroomio.com>',
+    from: from || '"Best from Learnova" <notify@Learnova.com>',
     to,
     subject,
     replyTo,
@@ -28,7 +28,7 @@ async function sendWithNodemailer(emailData) {
   });
 }
 
-// format: "ClassroomIO Developers (via ClassroomIO.com)" <notify@mail.classroomio.com>
+// format: "Learnova Developers (via Learnova.com)" <notify@mail.Learnova.com>
 function extractNameAndEmail(str) {
   // Use regular expressions to match the name and email
   const regex = /"(.*?)"\s+<\s*(.*?)@(.*?)\s*>/;

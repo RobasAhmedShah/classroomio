@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-  <title>Pricing | ClassroomIO</title>
+  <title>Pricing | Learnova</title>
 </svelte:head>
 
 <section>
@@ -152,7 +152,7 @@
         <button
           class="text-base mt-10 w-full rounded-md bg-slate-900 py-3 font-medium text-white hover:bg-slate-700 lg:rounded-md lg:py-3 lg:text-lg lg:font-semibold"
           data-cal-config={"{'layout':'month_view'}"}
-          data-cal-link="classroomio/enterprise"
+          data-cal-link="Learnova/enterprise"
         >
           {PLANS.ENTERPRISE.CTA.LABEL}
         </button>

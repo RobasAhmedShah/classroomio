@@ -27,13 +27,13 @@
     <div class="logo">
       <a
         href="/"
-        title={`${$t('navigation.goto')} ${orgName || 'ClassroomIO'} ${$t('navigation.home')}`}
+        title={`${$t('navigation.goto')} ${orgName || 'Learnova'} ${$t('navigation.home')}`}
         id="logo"
         data-hveid="8"
       >
         <img
           src={logo || '/logo-192.png'}
-          alt={`${orgName || 'ClassroomIO'} logo`}
+          alt={`${orgName || 'Learnova'} logo`}
           class="rounded w-9 inline-block mx-auto"
           data-atf="1"
         />
@@ -89,7 +89,7 @@
     <!-- <li class="hidden">
       <a
         class="flex items-center"
-        href="https://t.me/classroomio"
+        href="https://t.me/Learnova"
         target="_blank"
       >
         <img

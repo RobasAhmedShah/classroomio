@@ -1,5 +1,5 @@
-import { error } from '@sveltejs/kit';
 import type { BlogPost, RawBlogPost } from '$lib/types';
+import { error } from '@sveltejs/kit';
 import type { MetaTagsProps } from 'svelte-meta-tags';
 
 /** @type {import('./$types').PageLoad} */
@@ -59,8 +59,8 @@ function getPageMetaTags(blog: RawBlogPost): MetaTagsProps {
       ]
     },
     twitter: {
-      handle: '@classroomio',
-      site: '@classroomio',
+      handle: '@Learnova',
+      site: '@Learnova',
       cardType: 'summary_large_image' as const,
       title: blog.metadata.title,
       description: blog.metadata.description,

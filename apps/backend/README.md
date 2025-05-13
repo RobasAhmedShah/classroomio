@@ -1,4 +1,4 @@
-# ClassroomIO Backend
+# Learnova Backend
 
 ## Supported Features
 

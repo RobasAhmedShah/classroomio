@@ -37,7 +37,7 @@
       rel="noopener noreferrer"
       class="text-minimal flex items-center gap-1 hover:underline dark:text-white"
     >
-      <p class="text-base font-semibold">Built on ClassroomIO</p>
+      <p class="text-base font-semibold">Built on Learnova</p>
     </a>
   </nav>
 {/if}

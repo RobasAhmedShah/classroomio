@@ -50,12 +50,12 @@ app.use('/katex', katex);
 app.use('/sendEmail', sendEmail);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to ClassroomIO');
+  res.send('Welcome to Learnova');
 });
 
 // Start server
 app.listen(port, () => {
-  console.log(`ClassroomIO Backend listening on port ${port}!`);
+  console.log(`Learnova Backend listening on port ${port}!`);
 });
 
 // Handle uncaught exceptions

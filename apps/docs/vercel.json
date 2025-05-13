@@ -1,6 +1,12 @@
 {
   "rewrites": [
-    {"source": "/", "destination": "https://classroomio-com.vercel.app/"},
-    {"source": "/:match*", "destination": "https://classroomio-com.vercel.app/:match*"}
+    {
+      "source": "/",
+      "destination": "https://Learnova-com.vercel.app/"
+    },
+    {
+      "source": "/:match*",
+      "destination": "https://Learnova-com.vercel.app/:match*"
+    }
   ]
 }

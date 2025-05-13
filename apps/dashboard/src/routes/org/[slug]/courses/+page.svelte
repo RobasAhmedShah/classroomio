@@ -50,9 +50,9 @@
   function filterCourses(searchValue: string, _selectedId: string, courses: Course[]) {
     if (browser) {
       if (!selectedId) {
-        selectedId = localStorage.getItem('classroomio_filter_course_key') || '0';
+        selectedId = localStorage.getItem('Learnova_filter_course_key') || '0';
       } else {
-        localStorage.setItem('classroomio_filter_course_key', _selectedId);
+        localStorage.setItem('Learnova_filter_course_key', _selectedId);
       }
     }
 
@@ -97,7 +97,7 @@
 </script>
 
 <svelte:head>
-  <title>Courses - ClassroomIO</title>
+  <title>Courses - Learnova</title>
 </svelte:head>
 
 <section class="w-full md:max-w-6xl md:mx-auto">

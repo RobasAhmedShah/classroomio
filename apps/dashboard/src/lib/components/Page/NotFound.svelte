@@ -15,7 +15,7 @@
 </script>
 
 <div class="root flex w-screen flex-col items-center justify-center">
-  <img src="https://brand.cdn.clsrio.com/404.png" alt="classroomio_error_image" />
+  <img src="https://brand.cdn.clsrio.com/404.png" alt="Learnova_error_image" />
   <div class="flex w-4/5 flex-col items-center justify-center gap-3 dark:text-white lg:w-2/5">
     <p class="mb-5 text-4xl font-semibold dark:text-white">
       {#if isOrg}

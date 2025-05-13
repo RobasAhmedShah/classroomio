@@ -1,6 +1,6 @@
 <a href="https://peopletalk.io/">
-  <img alt="ClassroomIO is a no-code tool that allows you build and scale your online bootcamp with ease." src="https://raw.githubusercontent.com/rotimi-best/classroomio/main/apps/classroomio-com/static/classroomio-opengraph-image.png" />
-  <h1 align="center">ClassroomIO.com</h1>
+  <img alt="Learnova is a no-code tool that allows you build and scale your online bootcamp with ease." src="https://raw.githubusercontent.com/rotimi-best/Learnova/main/apps/Learnova-com/static/Learnova-opengraph-image.png" />
+  <h1 align="center">Learnova.com</h1>
   <p align="center">
     The Open Source Learning Management System for Companies
     <br />
@@ -8,17 +8,17 @@
   </p>
 </a>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/629e2bb8994345729513c4d69ccbe3d5)](https://app.codacy.com/gh/rotimi-best/classroomio?utm_source=github.com&utm_medium=referral&utm_content=rotimi-best/classroomio&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/629e2bb8994345729513c4d69ccbe3d5)](https://app.codacy.com/gh/rotimi-best/Learnova?utm_source=github.com&utm_medium=referral&utm_content=rotimi-best/Learnova&utm_campaign=Badge_Grade)
 
-## ✨ About ClassroomIO.com
+## ✨ About Learnova.com
 
-<img alt="ClassroomIO Courses page" src="https://raw.githubusercontent.com/rotimi-best/classroomio/main/apps/classroomio-com/static/classroomio-courses.png" />
+<img alt="Learnova Courses page" src="https://raw.githubusercontent.com/rotimi-best/Learnova/main/apps/Learnova-com/static/Learnova-courses.png" />
 
-Streamline training for everyone with ClassroomIO.com. Our all-in-one platform empowers bootcamps, educators, and businesses to manage training programs easily. With our platform, anyone can run multiple classes and cohorts all from one UI. The application is mobile-first, which means that students can access your lesson materials from any device.
+Streamline training for everyone with Learnova.com. Our all-in-one platform empowers bootcamps, educators, and businesses to manage training programs easily. With our platform, anyone can run multiple classes and cohorts all from one UI. The application is mobile-first, which means that students can access your lesson materials from any device.
 
 ### Mission: Provide Students with the Best Learning Experience
 
-At ClassroomIO, our mission is to provide students with the best possible learning experience. We believe in empowering educators with the tools they need to deliver high-quality education that is accessible, engaging, and effective.
+At Learnova, our mission is to provide students with the best possible learning experience. We believe in empowering educators with the tools they need to deliver high-quality education that is accessible, engaging, and effective.
 
 ### Key Features
 
@@ -40,16 +40,16 @@ Please reach out to me on [twitter](https://x.com/rotimi_best) if you have any f
 
 ## Built With
 
-- [SvelteKit](https://kit.svelte.dev/?ref=classroomio.com)
-- [Supabase](https://supabase.com/?ref=classroomio.com)
-- [TailwindCSS](https://tailwindcss.com/?ref=classroomio.com)
+- [SvelteKit](https://kit.svelte.dev/?ref=Learnova.com)
+- [Supabase](https://supabase.com/?ref=Learnova.com)
+- [TailwindCSS](https://tailwindcss.com/?ref=Learnova.com)
 
 ## Get a Demo
 
-You can book a quick 15 min demo to see if ClassroomIO is a good fit for you
+You can book a quick 15 min demo to see if Learnova is a good fit for you
 
-<a href="https://cal.com/classroomio/demo">
-  <img src="https://cal.com/book-with-cal-dark.svg" alt="Book a Call with ClassroomIO.com">
+<a href="https://cal.com/Learnova/demo">
+  <img src="https://cal.com/book-with-cal-dark.svg" alt="Book a Call with Learnova.com">
 </a>
 
 <!-- GETTING STARTED -->
@@ -60,7 +60,7 @@ To get a local copy up and running, please follow these simple steps.
 
 ### Prerequisites
 
-Here is what you need to be able to run ClassroomIO.com
+Here is what you need to be able to run Learnova.com
 
 - [Node.js](https://nodejs.org/) (Version: >=18.x)
 - [Supabase CLI](https://github.com/supabase/cli)
@@ -71,10 +71,10 @@ Here is what you need to be able to run ClassroomIO.com
 
 This repo is a mono repo that consists of 3 projects:
 
-1. `classroomio-com`: The landing page of ClassroomIO hosted [here](https://peopletalk.io)
+1. `Learnova-com`: The landing page of Learnova hosted [here](https://peopletalk.io)
 2. `backend`: The backend service that handles PDF, video processing, Emailing and Notifications.
 3. `dashboard`: The web application that runs the learning management system hosted [here](https://peopletalk.io).
-4. `docs`: Official documentation of ClassroomIO hosted [here](https://peopletalk.io/docs)
+4. `docs`: Official documentation of Learnova hosted [here](https://peopletalk.io/docs)
 
 ## Development
 
@@ -84,20 +84,20 @@ This repo is a mono repo that consists of 3 projects:
 
 2. This will open a fully configured workspace in your browser with all the necessary dependencies already installed.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rotimi-best/classroomio)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rotimi-best/Learnova)
 
 ### Local Setup
 
 1. Fork the repo, then clone it using the following command (remember to replace the url with the url from your forked repo)
 
    ```bash
-   git clone https://github.com/rotimi-best/classroomio.git
+   git clone https://github.com/rotimi-best/Learnova.git
    ```
 
 2. Go to project folder
 
    ```bash
-   cd classroomio
+   cd Learnova
    ```
 
 3. Set up Node if your Node version does not meet the project's requirements, as instructed by the documentation., "nvm" (Node Version Manager) allows using Node at the version required by the project:
@@ -118,7 +118,7 @@ This repo is a mono repo that consists of 3 projects:
 
 4. Set up your `.env` file
 
-   - Go to `apps/classroomio-com`, `apps/dashboard` and `apps/backend`.
+   - Go to `apps/Learnova-com`, `apps/dashboard` and `apps/backend`.
    - Duplicate the `.env.example` file and rename it to `.env`
    - Populate your .env files with the neccessary variables
 
@@ -172,14 +172,14 @@ To get the environmental variables for supabase continue to step(5)
 
 8. All projects should start running
 
-   - `classroomio-com`: [http://localhost:5174](http://localhost:5174)
+   - `Learnova-com`: [http://localhost:5174](http://localhost:5174)
    - `backend`: [http://localhost:3002](http://localhost:3002)
    - `dashboard`: [http://localhost:5173](http://localhost:5173)
    - `docs`: [http://localhost:3000](http://localhost:3000)
 
 9. Running a specific project
 
-   - **classroomio-com**: `pnpm dev --filter=classroomio-com`
+   - **Learnova-com**: `pnpm dev --filter=Learnova-com`
    - **backend**: `pnpm dev --filter=backend`
    - **dashboard**: `pnpm dev --filter=dashboard`
    - **docs**: `pnpm dev --filter=docs`

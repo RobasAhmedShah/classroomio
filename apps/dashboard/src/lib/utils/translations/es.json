@@ -964,7 +964,7 @@
         "remove": "Eliminar",
         "custom_favicon": "favicon personalizado",
         "custom_code": "código personalizado",
-        "custom_domain_not_classroomio": "El dominio no puede contener 'classroomio'"
+        "custom_domain_not_Learnova": "El dominio no puede contener 'Learnova'"
       },
       "customize-lms": {
         "title": "Personalizar LMS",
@@ -1057,12 +1057,12 @@
     "goto": "Ir a",
     "courses": "Cursos",
     "home": "Hogar",
-    "classroomio_home": "AulaIO Inicio",
+    "Learnova_home": "AulaIO Inicio",
     "dashboard": "Panel",
     "discussion": "Discusión",
     "people": "Gente",
     "goto_lms": "Ir a LMS",
-    "goto_home": "Ir a la página de inicio de ClassroomIO",
+    "goto_home": "Ir a la página de inicio de Learnova",
     "login": "Acceso",
     "signup": "Inscribirse",
     "redirecting": "Redireccionando",
@@ -1154,7 +1154,7 @@
     "integrations": {
       "heading": "Telegrama",
       "sub_heading": "Conecte su cuenta a Telegram para recibir notificaciones de cualquier cambio dentro de la aplicación.",
-      "step_authenticate": "Paso 1: autentica tu cuenta a través del bot ClassroomIO.",
+      "step_authenticate": "Paso 1: autentica tu cuenta a través del bot Learnova.",
       "open_bot_button": "Abrir robot",
       "step_chatId": "Paso 2: Ingrese el ID de chat que le proporcionó el bot.",
       "connect_button": "Conectar",

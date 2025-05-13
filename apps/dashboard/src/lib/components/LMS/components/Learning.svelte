@@ -27,7 +27,7 @@
           <div class="p-5">
             <span class="flex flex-col lg:flex-row gap-3 items-start pb-5">
               <img
-                src={course.logo || '/images/classroomio-course-img-template.jpg'}
+                src={course.logo || '/images/Learnova-course-img-template.jpg'}
                 alt="course"
                 class="hidden lg:block lg:w-[60px] lg:h-[60px]"
               />

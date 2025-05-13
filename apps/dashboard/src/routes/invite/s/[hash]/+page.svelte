@@ -125,7 +125,7 @@
 </script>
 
 <svelte:head>
-  <title>Join {data.name} on ClassroomIO</title>
+  <title>Join {data.name} on Learnova</title>
 </svelte:head>
 
 <AuthUI

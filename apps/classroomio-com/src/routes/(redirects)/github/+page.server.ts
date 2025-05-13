@@ -1,5 +1,5 @@
-import { redirect } from '@sveltejs/kit';
 import { client } from '$lib/utils/posthog';
+import { redirect } from '@sveltejs/kit';
 
 export const load = async ({ request }) => {
   client.capture({
@@ -7,5 +7,5 @@ export const load = async ({ request }) => {
     event: 'github page visited'
   });
 
-  redirect(307, 'https://github.com/rotimi-best/classroomio');
+  redirect(307, 'https://github.com/rotimi-best/Learnova');
 };

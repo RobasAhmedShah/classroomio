@@ -56,7 +56,7 @@
 
   async function setStars() {
     try {
-      const response = await fetch('https://api.github.com/repos/classroomio/classroomio');
+      const response = await fetch('https://api.github.com/repos/Learnova/Learnova');
       const data = await response.json();
       stars = data?.stargazers_count || 0;
     } catch (error) {
@@ -79,10 +79,10 @@
         width="28"
         height="28"
         src="/logo-512.png"
-        alt="classroomio logo"
+        alt="Learnova logo"
         class="w-6 md:w-10"
       />
-      <h1 class="text-xs md:text-lg font-medium ml-2">ClassroomIO</h1>
+      <h1 class="text-xs md:text-lg font-medium ml-2">Learnova</h1>
     </div>
   </a>
 
@@ -222,7 +222,7 @@
           width="20"
           height="20"
           src="/logo-512.png"
-          alt="classroomio logo"
+          alt="Learnova logo"
           class="w-[15%]"
         />
         <button class="mr-5" on:click={handleShowSolutions}>

@@ -139,7 +139,7 @@ const withEmailTemplate = (content) =>
     ">
   <div class="gutter">
     <a href="https://peopletalk.io" target="_blank">
-      <img src="https://brand.cdn.clsrio.com/cio-bg-transparent.png" alt="ClassroomIO Logo" /></a>
+      <img src="https://brand.cdn.clsrio.com/cio-bg-transparent.png" alt="Learnova Logo" /></a>
   </div>
   <div class="wrap" style="
         background-color: #fff;
@@ -162,21 +162,21 @@ const withEmailTemplate = (content) =>
     <table class="socialicons">
       <tr>
         <td>
-          <a target="_blank" href="https://twitter.com/classroomio"><img title="X"
+          <a target="_blank" href="https://twitter.com/Learnova"><img title="X"
               src="https://brand.cdn.clsrio.com/socials/twitter.png" alt="X" width="19" /></a>
         </td>
         <td>
-          <a target="_blank" href="https://www.youtube.com/@ClassroomIO"><img title="Youtube"
+          <a target="_blank" href="https://www.youtube.com/@Learnova"><img title="Youtube"
               src="https://brand.cdn.clsrio.com/socials/youtube.png" alt="Youtube" width="24" /></a>
         </td>
         <td>
-          <a target="_blank" href="https://www.facebook.com/classroomiohq"><img title="Facebook"
+          <a target="_blank" href="https://www.facebook.com/Learnovahq"><img title="Facebook"
               src="https://brand.cdn.clsrio.com/socials/facebook.png" alt="Facebook" width="24" /></a>
         </td>
       </tr>
     </table>
     <p style="padding-top: 8px; line-height: initial">
-      ClassroomIO ${new Date().getFullYear()}. All rights reserved.<br />
+      Learnova ${new Date().getFullYear()}. All rights reserved.<br />
       <a style="text-decoration: none" href="https://app.enzuzo.com/policies/tos/958fc978-5477-11ee-a03b-7b111830c594"
         target="_blank">Terms</a>
       |

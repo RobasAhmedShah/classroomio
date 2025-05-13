@@ -85,7 +85,7 @@
           <Card
             id={courseData.id}
             slug={courseData.slug}
-            bannerImage={courseData.logo || '/images/classroomio-course-img-template.jpg'}
+            bannerImage={courseData.logo || '/images/Learnova-course-img-template.jpg'}
             title={courseData.title}
             description={courseData.description}
             isPublished={courseData.is_published}

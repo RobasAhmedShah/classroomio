@@ -60,7 +60,7 @@
   <!--
     <img
       src="/logo-192.png"
-      alt="ClassroomIO logo"
+      alt="Learnova logo"
       class="rounded inline-block mx-auto w-20 h-20 sm:w-auto sm:h-auto"
       data-atf="1"
     />

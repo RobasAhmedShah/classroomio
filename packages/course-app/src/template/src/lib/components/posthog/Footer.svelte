@@ -36,7 +36,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <p class="text-base font-semibold">Built on ClassroomIO</p>
+      <p class="text-base font-semibold">Built on Learnova</p>
     </a>
   </nav>
 {/if}

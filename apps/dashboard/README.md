@@ -1,6 +1,6 @@
 <a href="https://peopletalk.io/">
-  <img alt="A flexible, user-friendly platform for creating, managing, and delivering courses for companies and training organisations" src="https://brand.cdn.clsrio.com/og/classroomio-og.png" />
-  <h1 align="center">ClassroomIO</h1>
+  <img alt="A flexible, user-friendly platform for creating, managing, and delivering courses for companies and training organisations" src="https://brand.cdn.clsrio.com/og/Learnova-og.png" />
+  <h1 align="center">Learnova</h1>
   <p align="center">
     The Open Source Teaching Platform for Bootcamps
     <br />
@@ -8,17 +8,17 @@
   </p>
 </a>
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/629e2bb8994345729513c4d69ccbe3d5)](https://app.codacy.com/gh/rotimi-best/classroomio?utm_source=github.com&utm_medium=referral&utm_content=rotimi-best/classroomio&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/629e2bb8994345729513c4d69ccbe3d5)](https://app.codacy.com/gh/rotimi-best/Learnova?utm_source=github.com&utm_medium=referral&utm_content=rotimi-best/Learnova&utm_campaign=Badge_Grade)
 
-## ✨ About ClassroomIO
+## ✨ About Learnova
 
-<img alt="ClassroomIO Courses page" src="https://brand.cdn.clsrio.com/classroomio-courses.png" />
+<img alt="Learnova Courses page" src="https://brand.cdn.clsrio.com/Learnova-courses.png" />
 
-Streamline training for everyone with ClassroomIO.com. Our all-in-one platform empowers bootcamps, educators, and businesses to manage training programs easily. With our platform, anyone can run multiple classes and cohorts all from one UI. The application is mobile-first, which means that students can access your lesson materials from any device.
+Streamline training for everyone with Learnova.com. Our all-in-one platform empowers bootcamps, educators, and businesses to manage training programs easily. With our platform, anyone can run multiple classes and cohorts all from one UI. The application is mobile-first, which means that students can access your lesson materials from any device.
 
 ### Mission: Provide Students with the best learning experience
 
-At ClassroomIO, our mission is to provide students with the best possible learning experience. We believe in empowering educators with the tools they need to deliver high-quality education that is accessible, engaging, and effective.
+At Learnova, our mission is to provide students with the best possible learning experience. We believe in empowering educators with the tools they need to deliver high-quality education that is accessible, engaging, and effective.
 
 ### Key Features
 
@@ -42,16 +42,16 @@ Please reach out to me on [twitter](https://x.com/rotimi_best) if you have any f
 
 ## Built With
 
-- [Svelekit](https://kit.svelte.dev/?ref=classroomio.com)
-- [Supabase](https://supabase.com/?ref=classroomio.com)
-- [TailwindCSS](https://tailwindcss.com/?ref=classroomio.com)
+- [Svelekit](https://kit.svelte.dev/?ref=Learnova.com)
+- [Supabase](https://supabase.com/?ref=Learnova.com)
+- [TailwindCSS](https://tailwindcss.com/?ref=Learnova.com)
 
 ## Get a Demo
 
-You can book a quick 15 min demo to see if ClassroomIO is a good fit for you
+You can book a quick 15 min demo to see if Learnova is a good fit for you
 
-<a href="https://cal.com/classroomio/demo">
-  <img src="https://cal.com/book-with-cal-dark.svg" alt="Book a Call with ClassroomIO.com">
+<a href="https://cal.com/Learnova/demo">
+  <img src="https://cal.com/book-with-cal-dark.svg" alt="Book a Call with Learnova.com">
 </a>
 
 <!-- GETTING STARTED -->
@@ -76,13 +76,13 @@ Here is what you need to be able to run Cal.com.
 1. Clone the repo
 
    ```bash
-   git clone https://github.com/rotimi-best/classroomio.git
+   git clone https://github.com/rotimi-best/Learnova.git
    ```
 
 2. Go to project folder
 
    ```bash
-   cd classroomio
+   cd Learnova
    ```
 
 3. Setup Node If your Node version does not meet the project's requirements as instructed by the docs, "nvm" (Node Version Manager) allows using Node at the version required by the project:
@@ -151,7 +151,7 @@ Here is what you need to be able to run Cal.com.
 
 ## Related Repos
 
-You can find other repos related to classroomio here:
+You can find other repos related to Learnova here:
 
-- Help Docs: <https://github.com/rotimi-best/classroomio.com/docs>
-- ClassroomIO.com: <https://github.com/rotimi-best/classroomio.com>
+- Help Docs: <https://github.com/rotimi-best/Learnova.com/docs>
+- Learnova.com: <https://github.com/rotimi-best/Learnova.com>

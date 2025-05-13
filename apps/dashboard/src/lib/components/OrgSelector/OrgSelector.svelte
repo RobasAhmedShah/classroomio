@@ -23,7 +23,7 @@
   }
 
   function onClick(org: CurrentOrg) {
-    localStorage.setItem('classroomio_org_sitename', org.siteName);
+    localStorage.setItem('Learnova_org_sitename', org.siteName);
     currentOrg.set(org);
 
     setTheme(org.theme);

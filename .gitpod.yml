@@ -4,7 +4,7 @@ tasks:
   - name: Setup all projects
     init: |
       pnpm i &&
-      cd apps/classroomio-com &&
+      cd apps/Learnova-com &&
       cp .env.example .env &&
       cd ../dashboard &&
       cp .env.example .env &&

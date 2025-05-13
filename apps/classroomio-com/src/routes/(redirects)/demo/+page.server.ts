@@ -1,5 +1,5 @@
-import { redirect } from '@sveltejs/kit';
 import { client } from '$lib/utils/posthog';
+import { redirect } from '@sveltejs/kit';
 
 export const load = ({ request }) => {
   client.capture({
@@ -7,5 +7,5 @@ export const load = ({ request }) => {
     event: 'cal.com page visited'
   });
 
-  redirect(307, 'https://cal.com/classroomio/demo');
+  redirect(307, 'https://cal.com/Learnova/demo');
 };

@@ -186,7 +186,7 @@
             <button
               class="py-4 px-8 border border-[#1D4ED8] outline-transparent rounded text-[#1D4ED8] text-sm font-semibold"
               data-cal-config="'layout':'month_view'"
-              data-cal-link="classroomio/demo"
+              data-cal-link="Learnova/demo"
             >
               Book a Demo
             </button>

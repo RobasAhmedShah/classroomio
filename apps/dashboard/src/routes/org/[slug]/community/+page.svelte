@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>Community - ClassroomIO</title>
+  <title>Community - Learnova</title>
 </svelte:head>
 
 <section class="w-full md:max-w-4xl md:mx-auto">

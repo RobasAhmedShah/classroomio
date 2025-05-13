@@ -1,4 +1,4 @@
-describe('classroomio dashboard', () => {
+describe('Learnova dashboard', () => {
   beforeEach(() => {
     cy.visit('http://localhost:4173');
   });
