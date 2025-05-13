@@ -37,7 +37,7 @@
 
     try {
       const filename = `slides/${lessonId}/${Date.now()}_${file.name}`;
-      const { data, error } = await supabase.storage.from('course-materials').upload(filename, file, {
+      const { data, error } = await supabase.storage.from('videos').upload(filename, file, {
         cacheControl: '3600',
         upsert: false
       });
@@ -45,7 +45,7 @@
       if (error) throw error;
 
       if (data) {
-        const { data: response } = await supabase.storage.from('course-materials').getPublicUrl(filename);
+        const { data: response } = await supabase.storage.from('videos').getPublicUrl(filename);
         uploadedFileUrl = response.publicUrl;
         $lesson.materials.slide_url = uploadedFileUrl;
         snackbar.success('course.navItem.lessons.materials.tabs.slide.upload_success');
