@@ -44,6 +44,7 @@
   import * as CONSTANTS from './constants';
   import { orderedTabs } from './constants';
   import Loader from './Loader.svelte';
+  import UploadSlide from './components/UploadSlide.svelte';
 
   export let mode = MODES.view;
   export let prevMode = '';
@@ -400,12 +401,16 @@
         index={currentTab}
       >
         {#if mode === MODES.edit}
-          <TextField
-            label={$t('course.navItem.lessons.materials.tabs.slide.slide_link')}
-            bind:value={$lesson.materials.slide_url}
-            onInputChange={() => ($isLessonDirty = true)}
-            helperMessage={$t('course.navItem.lessons.materials.tabs.slide.helper_message')}
-          />
+          <div class="flex flex-col gap-4">
+            <TextField
+              label={$t('course.navItem.lessons.materials.tabs.slide.slide_link')}
+              bind:value={$lesson.materials.slide_url}
+              onInputChange={() => ($isLessonDirty = true)}
+              helperMessage={$t('course.navItem.lessons.materials.tabs.slide.helper_message')}
+            />
+            <div class="border-t border-gray-200 dark:border-neutral-600 my-4"></div>
+            <UploadSlide {lessonId} />
+          </div>
         {/if}
       </TabContent>
       <TabContent
