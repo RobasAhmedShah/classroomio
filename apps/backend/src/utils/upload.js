@@ -1,17 +1,13 @@
 const multer = require('multer');
 
-// const storage = multer.memoryStorage();
-// const upload = multer({ storage: storage });
+// Use memory storage instead of disk storage for serverless environment
+const storage = multer.memoryStorage();
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, `${new Date().getTime()}-${file.originalname}`); //Appending extension
-  },
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 500 * 1024 * 1024 // 500MB limit
+  }
 });
-
-var upload = multer({ storage: storage });
 
 module.exports = upload;
