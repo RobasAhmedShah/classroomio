@@ -55,7 +55,7 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
   console.log('lessonId', lessonId);
   console.log('file', file);
 
-  if (!file?.fieldname) {
+  if (!file?.fieldname || !file?.fieldname) {
     return res.status(400).json({
       success: false,
       message: 'You must provide a file to upload'
@@ -72,9 +72,12 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
       message: 'File is too large'
     });
   }
+  const fileData = fs.readFileSync(file.path);
 
   const fileName = `${genUniqueId()}-${file.originalname.split(' ').join('-')}`;
+
   const fileOrigin = CLOUDFLARE_BUCKET_DOMAIN ?? `https://pub-${CLOUDFLARE_BUCKET_ID}.r2.dev`;
+
   const fileUrl = `${fileOrigin}/${fileName}`;
   let metadata = {
     sizeInMb: fileSizeInMegabytes
@@ -88,11 +91,11 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
       client: S3,
       queueSize: 5,
       partSize: 1024 * 1024 * 20,
-      leavePartsOnError: false,
+      leavePartsOnError: false, // optional manually handle dropped parts
       params: {
-        Bucket: 'videos',
+        Bucket: 'uploads',
         Key: fileName,
-        Body: file.buffer // Use file.buffer instead of reading from disk
+        Body: fileData
       }
     });
 
@@ -116,6 +119,8 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
     console.log('Upload to done');
     console.timeEnd('upload');
 
+    unlinkAsync(file.path);
+
     res.json({
       success: true,
       url: fileUrl,
@@ -123,6 +128,7 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
       message: 'Uploaded successfully'
     });
   } catch (error) {
+    // error handling.
     const { requestId, cfId, extendedRequestId } = error.$$metadata || {};
 
     console.error('Upload failed', error);
@@ -133,7 +139,17 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
       message: 'Uploaded failed: ' + error
     });
   } finally {
+    // finally.
     console.log('Upload complete');
+
+    // console.log('Add muse queue');
+    // museUploadQueue.add({
+    //   fileName,
+    //   originalFileName: file.originalname,
+    //   lessonId,
+    //   fileUrl,
+    //   unlinkPath: file.path,
+    // });
   }
 });
 
