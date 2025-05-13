@@ -53,7 +53,6 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
     query: { lessonId }
   } = req;
   console.log('lessonId', lessonId);
-  console.log('file', file);
 
   if (!file?.fieldname) {
     return res.status(400).json({
@@ -87,12 +86,13 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
     const parallelUploads3 = new Upload({
       client: S3,
       queueSize: 5,
-      partSize: 1024 * 1024 * 20,
+      partSize: 1024 * 1024 * 20, // 20MB chunks
       leavePartsOnError: false,
       params: {
         Bucket: 'videos',
         Key: fileName,
-        Body: file.buffer
+        Body: file.buffer,
+        ContentType: file.mimetype
       }
     });
 
