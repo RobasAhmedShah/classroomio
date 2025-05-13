@@ -8,9 +8,8 @@ const unlinkAsync = promisify(fs.unlink);
 
 const { Upload } = require('@aws-sdk/lib-storage');
 const {
-  S3Client
-  // PutObjectCommand
-  // GetObjectCommand,
+  S3Client,
+  HeadObjectCommand
 } = require('@aws-sdk/client-s3');
 
 const { getSupabase } = require('../utils/supabase');
@@ -52,7 +51,12 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
     file,
     query: { lessonId }
   } = req;
-  console.log('lessonId', lessonId);
+  console.log('Upload request received:', {
+    lessonId,
+    fileSize: file?.size,
+    fileName: file?.originalname,
+    mimeType: file?.mimetype
+  });
 
   if (!file?.fieldname) {
     return res.status(400).json({
@@ -80,7 +84,11 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
   };
 
   try {
-    console.log('Upload starting');
+    console.log('Starting upload to Cloudflare R2:', {
+      fileName,
+      fileSize: fileSizeInMegabytes,
+      mimeType: file.mimetype
+    });
 
     console.time('upload');
     const parallelUploads3 = new Upload({
@@ -89,7 +97,7 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
       partSize: 1024 * 1024 * 20, // 20MB chunks
       leavePartsOnError: false,
       params: {
-        Bucket: 'videos',
+        Bucket: CLOUDFLARE_BUCKET_ID,
         Key: fileName,
         Body: file.buffer,
         ContentType: file.mimetype
@@ -98,7 +106,12 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
 
     parallelUploads3.on('httpUploadProgress', (progress) => {
       const uploadProgress = Math.round(((progress.loaded / progress.total) * 100) / 2);
-      console.log({ uploadProgress });
+      console.log('Upload progress:', {
+        progress: uploadProgress,
+        loaded: progress.loaded,
+        total: progress.total
+      });
+
       const channel = supabase.channel('upload-progress');
       channel.subscribe((status) => {
         if (status === 'SUBSCRIBED') {
@@ -111,29 +124,43 @@ router.post('/', upload.single('videoFile'), async (req, res) => {
       });
     });
 
-    await parallelUploads3.done();
+    const result = await parallelUploads3.done();
+    console.log('Upload completed:', result);
 
-    console.log('Upload to done');
     console.timeEnd('upload');
 
-    res.json({
+    // Verify the upload was successful
+    try {
+      const headObject = await S3.send(new HeadObjectCommand({
+        Bucket: CLOUDFLARE_BUCKET_ID,
+        Key: fileName
+      }));
+      console.log('File exists in R2:', headObject);
+    } catch (error) {
+      console.error('File verification failed:', error);
+      throw new Error('File upload verification failed');
+    }
+
+    return res.status(200).json({
       success: true,
       url: fileUrl,
       metadata,
       message: 'Uploaded successfully'
     });
   } catch (error) {
-    const { requestId, cfId, extendedRequestId } = error.$$metadata || {};
+    console.error('Upload failed:', {
+      error: error.message,
+      stack: error.stack,
+      metadata: error.$$metadata
+    });
 
-    console.error('Upload failed', error);
-    console.log({ requestId, cfId, extendedRequestId });
-
-    res.json({
+    return res.status(500).json({
       success: false,
-      message: 'Uploaded failed: ' + error
+      message: 'Upload failed: ' + error.message,
+      error: error.$$metadata
     });
   } finally {
-    console.log('Upload complete');
+    console.log('Upload process completed');
   }
 });
 
