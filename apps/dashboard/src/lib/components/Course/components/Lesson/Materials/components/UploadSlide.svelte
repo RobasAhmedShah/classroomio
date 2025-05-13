@@ -12,51 +12,54 @@
   let isUploading = false;
   let progress = 0;
   let fileSize = 0;
-  let uploadedFileUrl = '';
+  let uploadedFiles: { name: string; url: string }[] = [];
 
   async function onFileSelected(e: Event) {
-    const file = (e.target as HTMLInputElement).files?.[0];
-    if (!file) return;
-
-    // Check file size (max 50MB)
-    const maxSize = 50 * 1024 * 1024; // 50MB in bytes
-    if (file.size > maxSize) {
-      snackbar.error('course.navItem.lessons.materials.tabs.slide.file_too_large');
-      return;
-    }
-
-    // Check file type
-    const allowedTypes = ['application/pdf', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation'];
-    if (!allowedTypes.includes(file.type)) {
-      snackbar.error('course.navItem.lessons.materials.tabs.slide.invalid_file_type');
-      return;
-    }
+    const files = (e.target as HTMLInputElement).files;
+    if (!files?.length) return;
 
     isUploading = true;
-    fileSize = file.size / (1024 * 1024); // Convert to MB
 
-    try {
-      const filename = `slides/${lessonId}/${Date.now()}_${file.name}`;
-      const { data, error } = await supabase.storage.from('videos').upload(filename, file, {
-        cacheControl: '3600',
-        upsert: false
-      });
-
-      if (error) throw error;
-
-      if (data) {
-        const { data: response } = await supabase.storage.from('videos').getPublicUrl(filename);
-        uploadedFileUrl = response.publicUrl;
-        $lesson.materials.slide_url = uploadedFileUrl;
-        snackbar.success('course.navItem.lessons.materials.tabs.slide.upload_success');
+    for (const file of Array.from(files)) {
+      // Check file size (max 50MB)
+      const maxSize = 50 * 1024 * 1024; // 50MB in bytes
+      if (file.size > maxSize) {
+        snackbar.error('course.navItem.lessons.materials.tabs.slide.file_too_large');
+        continue;
       }
-    } catch (error) {
-      console.error('Error uploading slide:', error);
-      snackbar.error('course.navItem.lessons.materials.tabs.slide.upload_error');
-    } finally {
-      isUploading = false;
-      progress = 0;
+
+      // Check file type
+      const allowedTypes = ['application/pdf', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation'];
+      if (!allowedTypes.includes(file.type)) {
+        snackbar.error('course.navItem.lessons.materials.tabs.slide.invalid_file_type');
+        continue;
+      }
+
+      fileSize = file.size / (1024 * 1024); // Convert to MB
+
+      try {
+        const filename = `slides/${lessonId}/${Date.now()}_${file.name}`;
+        const { data, error } = await supabase.storage.from('uploads').upload(filename, file, {
+          cacheControl: '3600',
+          upsert: false
+        });
+
+        if (error) throw error;
+
+        if (data) {
+          const { data: response } = await supabase.storage.from('uploads').getPublicUrl(filename);
+          uploadedFiles = [...uploadedFiles, { name: file.name, url: response.publicUrl }];
+          $lesson.materials.slide_url = uploadedFiles.map(f => f.url).join(',');
+          snackbar.success('course.navItem.lessons.materials.tabs.slide.upload_success');
+        }
+      } catch (error) {
+        console.error('Error uploading slide:', error);
+        snackbar.error('course.navItem.lessons.materials.tabs.slide.upload_error');
+      }
     }
+
+    isUploading = false;
+    progress = 0;
   }
 
   function handleUpload() {
@@ -72,6 +75,7 @@
     on:change={onFileSelected}
     accept=".pdf,.ppt,.pptx"
     disabled={isUploading}
+    multiple
   />
 
   {#if isUploading}
@@ -103,5 +107,26 @@
         </span>
       </div>
     </button>
+  {/if}
+
+  {#if uploadedFiles.length > 0}
+    <div class="mt-4 space-y-2">
+      {#each uploadedFiles as file}
+        <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded">
+          <span class="text-sm truncate">{file.name}</span>
+          <a 
+            href={file.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-primary-600 hover:text-primary-700 flex items-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd" />
+            </svg>
+            {$t('course.navItem.lessons.materials.tabs.slide.download_slide')}
+          </a>
+        </div>
+      {/each}
+    </div>
   {/if}
 </div> 
