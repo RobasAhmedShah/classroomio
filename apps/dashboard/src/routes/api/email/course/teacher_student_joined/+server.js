@@ -11,7 +11,7 @@ export async function POST({ request }) {
 
   const emailData = [
     {
-      from: `"Learnova" <notify@mail.Learnova.com>`,
+      from: `"Learnova" <noreply@peopletalk.io>`,
       to,
       subject: `[${courseName}] You've got a new student 🎉!`,
       content: `

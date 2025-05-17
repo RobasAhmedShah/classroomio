@@ -9,7 +9,7 @@ const sendEmail = async (subject: string, content: string, replyTo?: string) => 
       },
       body: JSON.stringify([
         {
-          from: `"Learnova Support" <notify@mail.Learnova.com>`,
+          from: `"Learnova Support" <noreply@peopletalk.io>`,
           to: 'help@Learnova.com',
           subject,
           content,

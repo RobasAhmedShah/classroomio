@@ -14,7 +14,7 @@ export async function POST({ request }) {
 
   const emailData = [
     {
-      from: `"${orgName} (via Learnova.com)" <notify@mail.Learnova.com>`,
+      from: `"${orgName} (via Learnova.com)" <noreply@peopletalk.io>`,
       to,
       subject: `You have been invited to a course in ${orgName}!`,
       content: `

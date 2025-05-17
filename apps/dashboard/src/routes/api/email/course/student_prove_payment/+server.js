@@ -34,7 +34,7 @@ export async function POST({ request }) {
 
   const emailData = [
     {
-      from: `"${orgName} - Learnova" <notify@mail.Learnova.com>`,
+      from: `"${orgName} - Learnova" <noreply@peopletalk.io>`,
       to,
       replyTo: teacherEmail,
       subject: `[${courseName}] One more step left`,
