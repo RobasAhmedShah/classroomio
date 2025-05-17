@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { ProgressBar } from 'carbon-components-svelte';
   import { supabase } from '$lib/utils/functions/supabase';
-  import { lesson } from '../../store/lessons';
+  import { lesson, handleUpdateLessonMaterials } from '../../store/lessons';
   import { t } from '$lib/utils/functions/translations';
   import { snackbar } from '$lib/components/Snackbar/store';
 
@@ -65,10 +65,7 @@
           $lesson.materials.slide_url = uploadedFiles.map(f => f.url).join(',');
           
           // Update the lesson in the database
-          const { error: updateError } = await supabase
-            .from('lessons')
-            .update({ materials: $lesson.materials })
-            .eq('id', lessonId);
+          const { error: updateError } = await handleUpdateLessonMaterials($lesson, lessonId);
 
           if (updateError) throw updateError;
           
