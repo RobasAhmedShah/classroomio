@@ -27,6 +27,7 @@
   let isFetching = false;
   let isLoading = false;
   let isRemoving: number | null = null;
+  let latestInviteLink = '';
 
   async function onSendInvite() {
     const { hasError, error: _error, emails } = validateEmailInString(emailsStr);
@@ -82,6 +83,15 @@
           },
           ...team
         ]);
+
+        // Generate invite link for the new member
+        const inviteData = JSON.stringify({
+          email: newMember.email,
+          orgId: $currentOrg.id,
+          orgSiteName: $currentOrg.siteName
+        });
+        const origin = window.location.origin;
+        latestInviteLink = `${origin}/invite/t/${encodeURIComponent(btoa(inviteData))}`;
       }
 
       triggerSendEmail(NOTIFICATION_NAME.INVITE_TEACHER, {
@@ -167,6 +177,18 @@
           {isLoading}
           isDisabled={isLoading }
         />
+
+        {#if latestInviteLink}
+          <div class="mt-4 p-3 border rounded bg-gray-50 dark:bg-gray-800">
+            <span class="block mb-2 font-semibold">Invite Link:</span>
+            <input type="text" class="w-full p-2 rounded border" readonly value={latestInviteLink} />
+            <button
+              type="button"
+              class="mt-2 px-3 py-1 bg-primary-600 text-white rounded hover:bg-primary-700"
+              on:click={() => {navigator.clipboard.writeText(latestInviteLink); snackbar.success('Copied!')}}
+            >Copy Link</button>
+          </div>
+        {/if}
       </div>
     </Column>
   </Row>

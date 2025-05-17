@@ -28,10 +28,17 @@ export async function POST({ request }) {
 
   const emailData = [
     {
-      from: `"Best from Learnova" <noreply@peopletalk.io>`,
-      to: email,
+      from: { address: 'noreply@peopletalk.io' },
+      to: [
+        {
+          email_address: {
+            address: email,
+            name: name
+          }
+        }
+      ],
       subject: `Join ${name} on Learnova 😃`,
-      content: `
+      htmlbody: `
     <p>Hey there,</p>
       <p> You have been invited to join ${name} on Learnova 🎉🎉🎉.</p>
       <div>
